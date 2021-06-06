@@ -1,0 +1,10 @@
+<section>
+  <h1>Angular</h1>
+
+  <ul class="list-courses">
+    <li *ngFor="let playlist of playlists">
+      <app-card-course [playlist]="playlist"></app-card-course>
+    </li>
+  </ul>
+</section>
+
