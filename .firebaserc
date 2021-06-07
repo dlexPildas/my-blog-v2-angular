@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "blog-junior-forever": {
+      "hosting": {
+        "junior-forever": [
+          "blog-junior-forever"
+        ]
+      }
+    }
+  }
+}

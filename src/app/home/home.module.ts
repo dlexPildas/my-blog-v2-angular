@@ -8,6 +8,7 @@ import { ArticleDetailComponent } from './pages/article-detail/article-detail.co
 import { SharedModule } from '../shared/shared.module';
 import { CardArticleComponent } from './components/card-article/card-article.component';
 import { CardAuthorComponent } from './components/card-author/card-author.component';
+import { ArticleNewComponent } from './pages/article-new/article-new.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CardAuthorComponent } from './components/card-author/card-author.compon
     ArticlesComponent,
     ArticleDetailComponent,
     CardArticleComponent,
-    CardAuthorComponent
+    CardAuthorComponent,
+    ArticleNewComponent
   ],
   imports: [
     CommonModule,

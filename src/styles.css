@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
 
 .mb-10 {
   margin-bottom: 10px;
@@ -10,4 +14,32 @@ body { margin: 0; }
 
 .mb-20 {
   margin-bottom: 20px;
+}
+
+.f-d-c {
+  flex-direction: column;
+}
+
+.f-1 {
+  flex: 1;
+}
+
+.f-2 {
+  flex: 2;
+}
+
+.container-general {
+  max-width: 70%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+
+@media (max-width: 500px) {
+  .container-general {
+    max-width: 98%;
+  }
 }

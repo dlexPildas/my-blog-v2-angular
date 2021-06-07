@@ -100,11 +100,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
   "defaultProject": "junior-forever",
-  "cli": {
-  }
+  "cli": {}
 }

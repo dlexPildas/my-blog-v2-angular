@@ -1,0 +1,38 @@
+<section class="container-general f-d-c ">
+  <h1>Escrever um novo artigo...</h1>
+
+  <form [formGroup]="articleForm" class="form">
+    <div class="fields">
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Tema do Artigo</mat-label>
+        <input matInput placeholder="Angular" formControlName="theme">
+        <mat-error *ngIf="articleForm.get('theme')?.hasError('required')">Campo obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Título do Artigo</mat-label>
+        <input matInput placeholder="Angular is the best framework..." formControlName="title">
+        <mat-error *ngIf="articleForm.get('title')?.hasError('required')">Campo obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Nome do autor</mat-label>
+        <input matInput placeholder="Bil Gates" formControlName="author">
+        <mat-error *ngIf="articleForm.get('author')?.hasError('required')">Campo obrigatório</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Url imagem autor</mat-label>
+        <input matInput placeholder="https://imagem.com" formControlName="urlImg">
+      </mat-form-field>
+    </div>
+
+    <div class="create-article">
+      <button mat-raised-button color="primary" [disabled]="!articleForm.valid">Criar artigo</button>
+    </div>
+
+    <div class="content">
+      <angular-editor formControlName="content"></angular-editor>
+    </div>
+  </form>
+</section>

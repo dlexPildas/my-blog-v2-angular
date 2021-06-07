@@ -1,13 +1,7 @@
 <section class="container">
-  <app-card-article (clicked)="navigateToDetailArticle()"></app-card-article>
-  <app-card-article></app-card-article>
-  <app-card-article></app-card-article>
-
-  <app-card-article></app-card-article>
-  <app-card-article></app-card-article>
-  <app-card-article></app-card-article>
-
-  <app-card-article></app-card-article>
-  <app-card-article></app-card-article>
-  <app-card-article></app-card-article>
+  <app-card-article
+    *ngFor="let article of articles$ | async"
+    [article]="article"
+    (clicked)="navigateToDetailArticle()">
+  </app-card-article>
 </section>

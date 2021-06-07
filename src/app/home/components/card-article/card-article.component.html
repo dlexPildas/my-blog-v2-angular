@@ -1,20 +1,18 @@
 <div class="card-container" (click)="wasClicked()">
   <header class="card-header">
-    <h2>Angular v12</h2>
+    <h2>{{article.theme}}</h2>
   </header>
 
   <section class="card-body">
-    <h2>Aqui vai o título do artigo Porque é algo que parace
-      ser muito importante.
-    </h2>
+    <h2>{{article?.title}}</h2>
   </section>
 
   <footer class="card-footer">
     <label>
-      Autor: Daniel Oliveira
+      Autor: {{article?.author}}
     </label>
     <label>
-      Data: 14/05/2021
+      Data: {{article.createDate | date: 'dd/MM/yyyy'}}
     </label>
   </footer>
 </div>

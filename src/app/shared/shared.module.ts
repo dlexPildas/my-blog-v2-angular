@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatButtonModule} from '@angular/material/button';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 
 import { SharedRoutingModule } from '@shared/shared-routing.module';
 import { HeaderComponent } from '@shared/components/header/header.component';
@@ -28,15 +27,18 @@ import { PageNotFoundComponent } from '@shared/components/page-not-found/page-no
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MatIconModule,
     FontAwesomeModule,
     SharedRoutingModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HeaderComponent,
     FooterComponent,
@@ -45,7 +47,8 @@ import { PageNotFoundComponent } from '@shared/components/page-not-found/page-no
     FontAwesomeModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class SharedModule { }
