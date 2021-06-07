@@ -1,9 +1,12 @@
+import { ArticleService } from './../../services/article.service';
+import { Article } from './../../models/article.model';
 import { MenuState } from 'src/app/store/app.reducer';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeEffectMenu } from 'src/app/store/app.actions';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-new',
@@ -62,14 +65,15 @@ export class ArticleNewComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private store: Store<MenuState>
+    private router: Router,
+    private store: Store<MenuState>,
+    private articleService: ArticleService
   ) { }
 
   ngOnInit(): void {
     this.removeEffectMenu();
     this.initializeForm();
   }
-
 
   initializeForm(): void {
     this.articleForm = this.formBuilder.group({
@@ -83,6 +87,13 @@ export class ArticleNewComponent implements OnInit {
 
   removeEffectMenu(): void {
     this.store.dispatch(removeEffectMenu());
+  }
+
+  createArticle(): void {
+    const article = this.articleForm.value as Article;
+    this.articleService.createArticle(article)
+      .then(response => this.router.navigateByUrl(''))
+      .catch(error => console.log(error))
   }
 
 }

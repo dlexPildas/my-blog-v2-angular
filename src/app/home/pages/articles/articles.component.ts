@@ -35,7 +35,7 @@ export class ArticlesComponent implements OnInit {
 
   navigateToDetailArticle(): void {
     this.store.dispatch(removeEffectMenu());
-    this.route.navigate(['/detail/1']);
+    this.route.navigate(['/article/detail/1']);
   }
 
 }

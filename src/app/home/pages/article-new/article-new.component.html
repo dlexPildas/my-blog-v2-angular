@@ -28,7 +28,7 @@
     </div>
 
     <div class="create-article">
-      <button mat-raised-button color="primary" [disabled]="!articleForm.valid">Criar artigo</button>
+      <button mat-raised-button color="primary" [disabled]="!articleForm.valid" (click)="createArticle()">Criar artigo</button>
     </div>
 
     <div class="content">

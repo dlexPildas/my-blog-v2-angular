@@ -15,12 +15,16 @@ export class ArticleService {
 
 
   getArticles(): Observable<Article[]> {
-    return this.firestore
-      .collection("article")
+    return this.firestore.collection('article')
       .get()
       .pipe(
         map((result) => this.convertCollectionToArrayArticles(result as QuerySnapshot<unknown>))
       );
+  }
+
+  createArticle(article: Article) {
+    return this.firestore.collection('article')
+      .add(article);
   }
 
   private convertCollectionToArrayArticles(result: QuerySnapshot<unknown>): Article[] {
