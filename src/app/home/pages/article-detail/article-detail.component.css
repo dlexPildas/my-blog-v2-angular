@@ -6,3 +6,11 @@
   flex-wrap: wrap;
   padding: 10px 0;
 }
+
+.content {
+  font-size: 1.125rem;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #222222;
+}

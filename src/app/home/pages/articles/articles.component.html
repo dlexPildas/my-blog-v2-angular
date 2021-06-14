@@ -2,6 +2,6 @@
   <app-card-article
     *ngFor="let article of articles$ | async"
     [article]="article"
-    (clicked)="navigateToDetailArticle()">
+    (click)="navigateToDetailArticle(article.id)">
   </app-card-article>
 </section>

@@ -33,9 +33,9 @@ export class ArticlesComponent implements OnInit {
     this.articles$ = this.articleService.getArticles();
   }
 
-  navigateToDetailArticle(): void {
+  navigateToDetailArticle(articleId: string): void {
     this.store.dispatch(removeEffectMenu());
-    this.route.navigate(['/article/detail/1']);
+    this.route.navigate([`/article/detail/${articleId}`]);
   }
 
 }
