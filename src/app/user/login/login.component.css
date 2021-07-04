@@ -30,7 +30,6 @@ section .form-login h1 {
 }
 
 section .form-login .button-login {
-  margin-top: 10px;
   color: #fff;
   background: #654ea3;
   border: 0;
@@ -48,6 +47,16 @@ section .form-login .button-login:hover {
   color: #654ea3;
   transition: 1s;
   /* animation: hover 2s; */
+}
+
+section .form-login .forgot-password {
+  cursor: pointer;
+  margin-top: 5px;
+  color: #fff;
+}
+
+section .form-login .forgot-password:hover {
+  color: #654ea3;
 }
 
 @keyframes hover {

@@ -63,8 +63,9 @@ header ul {
 header ul li {
   margin: 0px 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
+  letter-spacing: 2px;
 }
 
 header ul li a {

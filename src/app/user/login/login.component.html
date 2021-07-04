@@ -1,18 +1,20 @@
 <section>
-
-
-  <form class="form-login">
+  <form [formGroup]="form" (submit)="login()" class="form-login">
     <!-- <img src="../../../assets/logo-junior-forever.png" alt="logo"> -->
-    <h1>&lt;ENTRE, JUNIOR... /&gt;</h1>
+    <h1>&lt;{{ !isRegister ? 'ENTRE, JUNIOR' : 'CRIAR CONTA' }}... /&gt;</h1>
 
-    <input class="input-login mb-20" type="text">
+    <input class="input-login mb-20" type="text" placeholder="email" formControlName="email">
 
-    <input class="input-login" type="password">
+    <input class="input-login" class="input-login mb-20" type="password" placeholder="digite sua senha" formControlName="password">
 
-    <button class="button-login" type="submit">Entrar</button>
-    <!-- <span class="action">
-      <a>Esqueci minha senha</a>
-    </span> -->
+    <input *ngIf="isRegister" class="input-login mb-20" type="password"  placeholder="confirme sua senha" formControlName="confirmPassword">
 
+    <button class="button-login" type="submit" [disabled]="form.invalid">
+      {{!isRegister ? 'Entrar' : 'Registrar' }}
+    </button>
+
+    <a (click)="isRegister = !isRegister" class="forgot-password">
+      {{!isRegister ? 'Criar conta' : 'Voltar'}}
+    </a>
   </form>
 </section>

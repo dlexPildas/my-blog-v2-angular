@@ -1,10 +1,12 @@
-import { removeEffectMenu } from 'src/app/store/app.actions';
+import { addLoading, removeEffectMenu, removeLoading } from 'src/app/store/app.actions';
 import { Store } from '@ngrx/store';
 import { MenuState } from 'src/app/store/app.reducer';
 import { Article } from '@home/models/article.model';
 import { Observable } from 'rxjs';
 import { ArticleService } from '@home/services/article.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-article-detail',
@@ -12,20 +14,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-detail.component.css']
 })
 export class ArticleDetailComponent implements OnInit {
+  articleId!: string;
   article$!: Observable<Article>;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private store: Store<MenuState>,
     private articleService: ArticleService
   ) { }
 
   ngOnInit(): void {
     this.store.dispatch(removeEffectMenu());
-    this.getArticle('2ea5c794-66a5-40d0-ad1c-569db8b80885');
+    this.getArticle(this.getArticleIdFromUrl());
   }
 
+  getArticleIdFromUrl(): string {
+    return this.activatedRoute.snapshot.params.articleId;
+  }
+
+
   getArticle(articleId: string): void {
-    this.article$ = this.articleService.getArticleById(articleId);
+    this.store.dispatch(addLoading())
+    this.article$ = this.articleService.getArticleById(articleId)
+      .pipe(
+        finalize(() => this.store.dispatch(removeLoading()))
+      );;
   }
 
 }

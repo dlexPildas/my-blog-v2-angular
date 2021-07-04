@@ -1,3 +1,4 @@
+import { removeLoading } from './../../../store/app.actions';
 import { Article } from './../../models/article.model';
 
 import { Component, OnInit } from '@angular/core';
@@ -6,9 +7,10 @@ import { AngularFirestore } from "@angular/fire/firestore";
 import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 
-import { addEffectMenu, removeEffectMenu } from 'src/app/store/app.actions';
+import { addEffectMenu, addLoading, removeEffectMenu } from 'src/app/store/app.actions';
 import { MenuState } from 'src/app/store/app.reducer';
 import { ArticleService } from '@home/services/article.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-articles',
@@ -30,7 +32,11 @@ export class ArticlesComponent implements OnInit {
   }
 
   loadArticles(): void {
-    this.articles$ = this.articleService.getArticles();
+    this.store.dispatch(addLoading())
+    this.articles$ = this.articleService.getArticles()
+      .pipe(
+        finalize(() => this.store.dispatch(removeLoading()))
+      );
   }
 
   navigateToDetailArticle(articleId: string): void {

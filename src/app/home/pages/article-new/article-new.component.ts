@@ -1,3 +1,4 @@
+import { AlertService } from './../../../shared/services/alert.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -23,9 +24,9 @@ export class ArticleNewComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private snackBar: MatSnackBar,
     private store: Store<MenuState>,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -48,21 +49,16 @@ export class ArticleNewComponent implements OnInit, OnDestroy {
   }
 
   createArticle(): void {
-    const article = this.articleForm.value as Article;
-
-    article.id = this.generateId();
+    const article = {
+      ...this.articleForm.value,
+      createDate: new Date().toString(),
+      id: this.generateId()
+    } as Article;
 
     this.subscription = this.articleService.createArticle(article)
       .subscribe(
-        () => {
-          this.router.navigateByUrl('');
-        },
-        () => this.snackBar.open('Erro ao criar o novo arquivo', '😢',
-          {
-            duration: 3,
-            horizontalPosition: 'right',
-            verticalPosition: 'top',
-          })
+        () => this.router.navigateByUrl(''),
+        () => this.alertService.alertError('Erro ao criar o artigo')
       );
   }
 

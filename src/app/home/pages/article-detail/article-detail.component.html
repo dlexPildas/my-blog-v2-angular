@@ -1,6 +1,6 @@
 <section class="container">
   <article>
-    <h1>{{(article$ | async)?.title}}</h1>
+    <h1 class="title">{{(article$ | async)?.title}}</h1>
     <p class="content" [innerHtml]="(article$ | async)?.content"></p>
     <app-card-author></app-card-author>
   </article>

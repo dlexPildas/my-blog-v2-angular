@@ -109,5 +109,7 @@
     }
   },
   "defaultProject": "junior-forever",
-  "cli": {}
+  "cli": {
+    "analytics": "1895d744-2ed0-452f-b849-5a04e58c0def"
+  }
 }

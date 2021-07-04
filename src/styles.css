@@ -16,6 +16,10 @@ body {
   margin-bottom: 20px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 .f-d-c {
   flex-direction: column;
 }
