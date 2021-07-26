@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
   }
 
   updateOptionSelected(optionSelected: Menu): void {
+    this.optionSelected = optionSelected;
     this.addEffectToMenu();
   }
 

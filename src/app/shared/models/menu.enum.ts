@@ -1,5 +1,7 @@
 export enum Menu {
   home,
   course,
-  podcast
+  podcast,
+  signSigout,
+  articleNew
 }

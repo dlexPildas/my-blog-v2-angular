@@ -22,3 +22,10 @@
   margin-bottom: 25px;
 }
 
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 95%;
+  }
+}
+

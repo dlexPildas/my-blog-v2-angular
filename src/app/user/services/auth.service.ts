@@ -76,6 +76,8 @@ export class AuthService {
       emailVerified: user.emailVerified
     }
 
+    localStorage.setItem('user', JSON.stringify(userData));
+
     return userRef.set(userData, {
       merge: true
     })

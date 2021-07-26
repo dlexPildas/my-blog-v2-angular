@@ -14,7 +14,9 @@
       </li>
 
       <li *ngIf="hasUser$ | async">
-        <a routerLink="article/new" (click)="optionSelected = optionMenu.course">Criar Artigo</a>
+        <a [ngClass]="{ 'menu-selected': optionSelected === optionMenu.articleNew}"
+          routerLink="article/new"
+          (click)="optionSelected = optionMenu.articleNew">Criar Artigo</a>
       </li>
 
       <!-- <li>
@@ -24,8 +26,10 @@
           PODCASTS
         </a>
       </li> -->
-      <li *ngIf="!(hasUser$ | async)">
-        <a routerLink="user/login">Entrar</a>
+      <li  *ngIf="!(hasUser$ | async)">
+        <a [ngClass]="{ 'menu-selected': optionSelected === optionMenu.signSigout}"
+          routerLink="user/login"
+          (click)="optionSelected = optionMenu.signSigout">Entrar</a>
       </li>
 
       <li (click)="logout()" *ngIf="hasUser$ | async">
