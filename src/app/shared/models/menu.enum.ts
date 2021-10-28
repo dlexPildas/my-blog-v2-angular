@@ -3,5 +3,6 @@ export enum Menu {
   course,
   podcast,
   signSigout,
-  articleNew
+  articleNew,
+  aboutMe
 }

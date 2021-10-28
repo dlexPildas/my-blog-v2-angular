@@ -1,5 +1,5 @@
 <header>
-  <div class="background" [ngClass]="{'background-not-home': !(effectMenuIsActive$ | async)}"></div>
+  <div class="background" [ngClass]="{'background-not-home': optionSelected !== optionMenu.home && optionSelected !== optionMenu.signSigout}"></div>
 
   <img src="../../../../assets/logo-junior-forever.png" alt="junior-forever" />
 
@@ -19,13 +19,14 @@
           (click)="optionSelected = optionMenu.articleNew">Criar Artigo</a>
       </li>
 
-      <!-- <li>
-        <a [ngClass]="{'menu-selected': optionSelected === optionMenu.podcast}"
-          routerLink=""
-          (click)="optionSelected = optionMenu.podcast">
-          PODCASTS
+      <li>
+        <a [ngClass]="{'menu-selected': optionSelected === optionMenu.aboutMe}"
+          routerLink="about"
+          (click)="optionSelected = optionMenu.aboutMe">
+          About me
         </a>
-      </li> -->
+      </li>
+
       <li  *ngIf="!(hasUser$ | async)">
         <a [ngClass]="{ 'menu-selected': optionSelected === optionMenu.signSigout}"
           routerLink="user/login"

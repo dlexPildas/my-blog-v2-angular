@@ -1,0 +1,34 @@
+.card {
+  height: 150px;
+  width: 300px;
+  background: #222222;
+  margin-right: 15px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.card h2 {
+  text-align: center;
+  background: #7159c1;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.card p {
+  align-items: center;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 0 5px;
+}
+
+.card footer a {
+  font-weight: bold;
+  color: #7159c1;
+  cursor: pointer;
+  padding: 5px;
+}
