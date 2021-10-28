@@ -1,0 +1,38 @@
+.job {
+  position: relative;
+  border-left: 3px solid #aaa;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ball {
+  position: absolute;
+  background:  linear-gradient(45deg, #654ea3, #eaafc8);
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: -8.5px;
+  border-radius: 50%;
+}
+
+.content h2 {
+  margin: 0;
+}
+
+.content p {
+  color: #222;
+  letter-spacing: 1.2px;
+}
+
+footer {
+  margin-bottom: 40px;
+}
+
+footer span {
+  margin-right: 10px;
+  padding: 4px;
+  background: #7159c1;
+  color: #eee;
+  font-weight: bold;
+}

@@ -1,0 +1,14 @@
+<div class="job" *ngFor="let job of jobs">
+  <span class="ball"></span>
+
+  <div class="content">
+    <strong>{{job.period}}</strong>
+    <h2>{{job.function}} / <small>{{job.company}}</small></h2>
+
+    <p>{{job.description}}</p>
+  </div>
+
+  <footer>
+    <span *ngFor="let tech of job.techs">{{tech}}</span>
+  </footer>
+</div>

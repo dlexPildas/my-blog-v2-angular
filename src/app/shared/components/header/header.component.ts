@@ -15,9 +15,8 @@ import { addEffectMenu } from 'src/app/store/app.actions';
 })
 export class HeaderComponent implements OnInit {
   optionMenu = Menu;
-  optionSelected: Menu = Menu.home;
+  optionSelected: Menu = Menu.aboutMe;
 
-  effectMenuIsActive$!: Observable<boolean>;
   hasUser$!: Observable<boolean>;
 
   constructor(
@@ -26,7 +25,6 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.effectMenuIsActive$ = this.store.pipe(select(getEffectiveMenuState));
     this.hasUser$ = this.store.pipe(select(hasUser));
   }
 

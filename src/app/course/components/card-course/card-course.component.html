@@ -1,16 +1,16 @@
 <div class="card-course">
   <header>
-    <h3>{{playlist.snippet.title}}</h3>
+    <h3>{{playlist?.snippet?.title}}</h3>
   </header>
 
   <div class="card-course-content">
-    <img [src]="playlist.snippet.thumbnails.medium.url" [alt]="playlist.snippet.channelTitle">
-    <p>{{playlist.snippet.description}}</p>
+    <img [src]="playlist?.snippet?.thumbnails?.medium?.url" [alt]="playlist?.snippet?.channelTitle">
+    <p>{{playlist?.snippet?.description}}</p>
   </div>
 
   <footer>
-    <span>{{playlist.snippet.publishedAt | date: 'dd/mm/yyyy'}}</span>
-    <a [href]="'https://www.youtube.com/playlist?list=' + playlist.id" target="_blank">
+    <span>{{playlist?.snippet?.publishedAt | date: 'dd/mm/yyyy'}}</span>
+    <a [href]="'https://www.youtube.com/playlist?list=' + playlist?.id" target="_blank">
       Acessar Curso
     </a>
   </footer>

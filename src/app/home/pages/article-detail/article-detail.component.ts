@@ -29,7 +29,7 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   getArticleIdFromUrl(): string {
-    return this.activatedRoute.snapshot.params.articleId;
+    return this.activatedRoute?.snapshot?.params?.articleId;
   }
 
 

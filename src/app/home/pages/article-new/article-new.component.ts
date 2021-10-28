@@ -24,7 +24,7 @@ export class ArticleNewComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private store: Store<MenuState>,
+    // private store: Store<MenuState>,
     private articleService: ArticleService,
     private alertService: AlertService
   ) { }
@@ -45,7 +45,7 @@ export class ArticleNewComponent implements OnInit, OnDestroy {
   }
 
   removeEffectMenu(): void {
-    this.store.dispatch(removeEffectMenu());
+    // this.store.dispatch(removeEffectMenu());
   }
 
   createArticle(): void {
